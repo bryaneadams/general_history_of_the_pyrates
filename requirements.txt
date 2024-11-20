@@ -1,0 +1,13 @@
+numpy
+matplotlib
+nltk
+seaborn
+spacy
+scikit-learn
+parse
+ipykernel
+pymupdf
+pypdf2
+Pillow
+pdf2image
+pytesseract
