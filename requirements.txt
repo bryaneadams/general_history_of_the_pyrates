@@ -11,3 +11,4 @@ pypdf2
 Pillow
 pdf2image
 pytesseract
+tensorflow
