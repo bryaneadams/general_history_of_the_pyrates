@@ -8,6 +8,8 @@ Used for a course project in my NLP course.
 import nltk
 nltk.download('stopwords')
 nltk.download('words')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger_eng')
 ```
 
 ## Download GloVe embeddings
@@ -39,3 +41,9 @@ def load_glove_embeddings(file_path):
                 pass
     return embeddings_index
 ```
+### Book sources
+
+1. [A General History of Pyrates](https://www.gutenberg.org/ebooks/search/?query=A+General+History+of+Pyrates&submit_search=Go%21)
+2. [Daniel Defoe](https://www.gutenberg.org/ebooks/search/?query=Daniel+Defoe&submit_search=Go%21)
+3. [Jonathan Swift](https://www.gutenberg.org/ebooks/author/326)
+4. [Mist's Weekly Journal](https://go-gale-com.mutex.gmu.edu/ps/i.do?title=Mist%27s%2BWeekly%2BJournal&v=2.1&u=viva_gmu&it=JIourl&p=BBCN&sw=w)
