@@ -13,3 +13,4 @@ pdf2image
 pytesseract
 tensorflow[and-cuda]
 tensorflow_datasets
+pathlib
