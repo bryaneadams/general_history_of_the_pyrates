@@ -4,6 +4,18 @@ Used for a course project in my NLP course.
 
 ## Python environment
 
+The python environment is designed to be ran in a GPU environment. Although this is not necessary to train the RNN, it will be a lot longer to build and train the model in a CPU environment.
+
+To create the environment:
+
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+For the `nltk` function, you will also need to download the following at the start, but will not need to replicate.
+
 ```
 import nltk
 nltk.download('stopwords')
@@ -41,7 +53,7 @@ def load_glove_embeddings(file_path):
                 pass
     return embeddings_index
 ```
-### Book sources
+## Book sources
 
 1. [A General History of Pyrates](https://www.gutenberg.org/ebooks/search/?query=A+General+History+of+Pyrates&submit_search=Go%21)
 2. [Daniel Defoe](https://www.gutenberg.org/ebooks/search/?query=Daniel+Defoe&submit_search=Go%21)
