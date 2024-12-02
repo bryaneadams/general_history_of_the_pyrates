@@ -163,3 +163,4 @@ cython_debug/
 
 course_notebooks/
 books/mist_weekly_journal_pdfs
+.DS_Store

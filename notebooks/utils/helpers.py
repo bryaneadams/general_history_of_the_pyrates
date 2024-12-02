@@ -33,14 +33,14 @@ def determine_model_performance(model, test_data: ArrayLike, test_labels: ArrayL
     return cm, cmn, score
 
 def pre_process_pyrates(text: str, remove_stop_words: bool = True) -> str:
-    """_summary_
+    """Used to preprocess the pyrates book
 
     Args:
-        text (str): _description_
-        remove_stop_words (bool, optional): _description_. Defaults to True.
+        text (str): Text to clean
+        remove_stop_words (bool, optional): If you want to remove stop words. Defaults to True.
 
     Returns:
-        str: _description_
+        str: cleaned text
     """
 
     # remove underscores
@@ -70,14 +70,14 @@ def pre_process_pyrates(text: str, remove_stop_words: bool = True) -> str:
 
 
 def pre_process_rc(text: str, remove_stop_words: bool = True) -> str:
-    """_summary_
+    """Used to preprocess Robinson Crusoe
 
     Args:
-        text (str): _description_
-        remove_stop_words (bool, optional): _description_. Defaults to True.
+        text (str): Text to clean
+        remove_stop_words (bool, optional): If you want to remove stop words. Defaults to True.
 
     Returns:
-        str: _description_
+        str: cleaned text
     """
 
     # remove special punctuation
@@ -105,14 +105,14 @@ def pre_process_rc(text: str, remove_stop_words: bool = True) -> str:
 
 
 def pre_process_gt(text: str, remove_stop_words: bool = True) -> str:
-    """_summary_
+    """Used to preprocess Gullivar's Travels
 
     Args:
-        text (str): _description_
-        remove_stop_words (bool, optional): _description_. Defaults to True.
+        text (str): text to clean
+        remove_stop_words (bool, optional): If you want to remove stop words. Defaults to True.
 
     Returns:
-        str: _description_
+        str: cleaned text
     """
 
     # remove special punctuation
@@ -141,13 +141,13 @@ def pre_process_gt(text: str, remove_stop_words: bool = True) -> str:
 
 
 def pre_process_weekly_journal(text: str) -> str:
-    """_summary_
+    """Used to clean teh weekly journal
 
     Args:
-        text (str): _description_
+        text (str): text to clean
 
     Returns:
-        str: _description_
+        str: cleaned text
     """
 
     cleaned_text = re.sub(r"[^a-zA-Z0-9\s]", "", text)
@@ -160,13 +160,13 @@ def pre_process_weekly_journal(text: str) -> str:
 
 
 def determine_tf_idf_matrix(corpus: list) -> pd.DataFrame:
-    """_summary_
+    """create the TF-IDF matrix using a more common method taught in courses
 
     Args:
-        corpus (list): _description_
+        corpus (list): documents
 
     Returns:
-        pd.DataFrame: _description_
+        pd.DataFrame: TF IDF in dataframe form
     """
 
     vectorizer = TfidfVectorizer(
@@ -185,13 +185,13 @@ def determine_tf_idf_matrix(corpus: list) -> pd.DataFrame:
 
 
 def determine_distance_matrix(tf_idf: pd.DataFrame) -> pd.DataFrame:
-    """_summary_
+    """Used to create a distance matrix
 
     Args:
-        tf_idf (pd.DataFrame): _description_
+        tf_idf (pd.DataFrame): TF IDF matrix
 
     Returns:
-        pd.DataFrame: _description_
+        pd.DataFrame: distances between documents
     """
     return pd.DataFrame(euclidean_distances(tf_idf))
 
