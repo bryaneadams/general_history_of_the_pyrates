@@ -4,7 +4,7 @@ This is an authorship identification project used for an NLP course. The followi
 
 ## Python environment
 
-The python environment is designed to be ran in a GPU environment. Although this is not necessary to train the RNN, it will be a lot longer to build and train the model in a CPU environment.
+The python environment is designed to be ran in a GPU environment. Although this is not necessary to train the RNN, it will take longer to build and train the model in a CPU environment.
 
 To create the environment:
 
