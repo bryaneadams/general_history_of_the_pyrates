@@ -11,26 +11,30 @@ from sklearn.metrics import confusion_matrix
 from typing import Tuple
 from numpy.typing import ArrayLike
 
-def determine_model_performance(model, test_data: ArrayLike, test_labels: ArrayLike) -> Tuple[ArrayLike,ArrayLike,float]:
+
+def determine_model_performance(
+    model, test_data: ArrayLike, test_labels: ArrayLike
+) -> Tuple[ArrayLike, ArrayLike, float]:
     """
     Used to create a confusion matrix for your model
-    
+
     Args:
         model (): Your model
         test_data (ArrayLike): Test data that is padded
         test_labels (ArrayLike): Test labels
-        
+
     Returns:
         Tuple[ArrayLike,ArrayLike,float]: Confusion matrix, normalized confusion matrix, accuracy score
     """
-    
+
     predictions = model.predict(test_data)
     prediction_labels = np.argmax(predictions, axis=1)
     cm = confusion_matrix(test_labels, prediction_labels)
     score = accuracy_score(test_labels, prediction_labels)
-    cmn = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-    
+    cmn = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis]
+
     return cm, cmn, score
+
 
 def pre_process_pyrates(text: str, remove_stop_words: bool = True) -> str:
     """Used to preprocess the pyrates book
@@ -195,8 +199,9 @@ def determine_distance_matrix(tf_idf: pd.DataFrame) -> pd.DataFrame:
     """
     return pd.DataFrame(euclidean_distances(tf_idf))
 
-def load_glove_embeddings(file_path:str)->dict:
-    """_summary_
+
+def load_glove_embeddings(file_path: str) -> dict:
+    """Loads the GloVe embeddings
 
     Args:
         file_path (str): path to glove index
@@ -205,12 +210,12 @@ def load_glove_embeddings(file_path:str)->dict:
         dict: dictionary of glove embeddings
     """
     embeddings_index = {}
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             values = line.split()
             word = values[0]
             try:
-                coefs = np.asarray(values[1:], dtype='float32')
+                coefs = np.asarray(values[1:], dtype="float32")
                 embeddings_index[word] = coefs
             except:
                 pass
