@@ -43,7 +43,7 @@ unzip glove.840B.300d.zip
 
 ### Loading embeddings
 
-This function, found in [`notebooks/model_notebooks/utils/helpers.py](https://github.com/bryaneadams/general_history_of_the_pyrates/blob/66095d300a982c4211bbd76a7e8e1081a3ffe740/notebooks/model_notebooks/utils/helpers.py#L198) will load embeddings into a dictionary for use in the model. 
+This function, found in [`notebooks/model_notebooks/utils/helpers.py`](https://github.com/bryaneadams/general_history_of_the_pyrates/blob/66095d300a982c4211bbd76a7e8e1081a3ffe740/notebooks/model_notebooks/utils/helpers.py#L198) will load embeddings into a dictionary for use in the model. 
 
 There are a few values I skip for example:
 
